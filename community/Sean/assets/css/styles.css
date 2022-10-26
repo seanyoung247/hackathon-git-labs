@@ -13,11 +13,9 @@ html {
 body {
     display: flex;
     position: relative;
-    flex-flow: column;
     justify-content: center;
     align-items: center;
-    transform-style: preserve-3d;
-    perspective: 1500px;
+    
     background:
         radial-gradient(circle, #00314099 0%, #000000EE 50%), 
         url('../img/rough.png');

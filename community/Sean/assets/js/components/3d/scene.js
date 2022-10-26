@@ -6,6 +6,7 @@ import { createComponent, createTemplate, WebComponent } from '../../externals.j
     const styles = `
         slot {
             display: flex;
+            perspective: 1500px;
             transform-style: preserve-3d;
         }
     `;
