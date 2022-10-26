@@ -52,7 +52,7 @@ import { createComponent, createTemplate, WebComponent } from '../../externals.j
     const html = `
         <div id="faces">
             ${faces.map(e => `
-                <div id=${e.label} part="face" class="face">
+                <div id=${e.label} part="face ${e.label}" class="face">
                     <slot name=${e.label}>
                     </slot>
                 </div>`).join('\n')}
@@ -63,9 +63,9 @@ import { createComponent, createTemplate, WebComponent } from '../../externals.j
         static get tagName() { return 'cuboid-3d'; }
         static get attributes() {
             return {
-                'width': {type: String, default: 0},
-                'height': {type: String, default: 0},
-                'depth': {type: String, default: 0}
+                'width': {type: String, default: '100px'},
+                'height': {type: String, default: '100px'},
+                'depth': {type: String, default: '100px'}
             }
         }
         static _createDefaultAccessor(self, attr, prop) {
