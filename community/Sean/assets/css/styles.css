@@ -14,14 +14,26 @@ body {
     display: flex;
     position: relative;
     flex-flow: column;
-    justify-content: space-evenly;
+    justify-content: center;
     align-items: center;
-    gap: 5em;
     transform-style: preserve-3d;
     perspective: 1500px;
     background:
         radial-gradient(circle, #00314099 0%, #000000EE 50%), 
         url('../img/rough.png');
+}
+
+main {
+    display: flex;
+    flex-flow: column;
+    justify-content: space-evenly;
+    align-items: center;
+    transform-style: preserve-3d;
+    gap: 5em;
+
+    height: 100%;
+    max-height: 1000px;
+    min-height: 400px;
 }
 
 .title {
@@ -43,13 +55,15 @@ body {
     font-size: 1.5em;
     font-weight: bold;
     color: white;
+    width: 6em;
     aspect-ratio: 1/1;
     text-shadow: 1px 1px 5px black;
-    background: radial-gradient(circle, lightblue 0%, transparent 75%); 
+    border-radius: 50%;
+    backdrop-filter: blur(5px);
+    background: radial-gradient(circle, lightblue 0%, transparent 65%); 
 }
 
 #cube-wrapper {
-    display: flex;
     position: absolute;
     top: 50%;
     left: 50%;
@@ -59,16 +73,17 @@ body {
     transform: translate(-50%, -50%);
 }
 
-css3d-cuboid {
-    animation: rotate 10s linear infinite;
-}
-
 @keyframes rotate {
     from { transform: rotate3d(0); }
     to { transform: rotate3d(1,1,0, 360deg);}
 }
 
-css3d-cuboid > div {
+
+#cube {
+    animation: rotate 10s linear infinite;
+}
+
+#cube > div {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -81,7 +96,8 @@ css3d-cuboid > div {
     transform: translateZ(-10px);
 }
 
-css3d-cuboid::part(face) {
+#cube::part(face) {
+    border: none;
     outline: 1px solid #143A4480;
     transform-style: preserve-3d;
     background: #00d5ffaa radial-gradient(circle, #00000000 0%, #000000AA 90%);

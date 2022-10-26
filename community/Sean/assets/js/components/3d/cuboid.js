@@ -4,12 +4,18 @@ import { createComponent, createTemplate, WebComponent } from '../../externals.j
 (() => {
 
     const faces = [
-        {label: 'front', width: '--width', height: '--height', transform: 'rotateY(0deg) translateZ(calc(var(--depth) / 2))'},
-        {label: 'back', width: '--width', height: '--height', transform: 'rotateY(180deg) translateZ(calc(var(--depth) / 2))'},
-        {label: 'left', width: '--depth', height: '--height', transform: 'rotateY(-90deg) translateZ(calc(var(--width) / 2))'},
-        {label: 'right', width: '--depth', height: '--height', transform: 'rotateY(90deg) translateZ(calc(var(--width) / 2))'},
-        {label: 'top', width: '--width', height: '--depth', transform: 'rotateX(90deg) translateZ(calc(var(--height) / 2))'},
-        {label: 'bottom', width: '--width', height: '--depth', transform: 'rotateX(-90deg) translateZ(calc(var(--height) / 2))'}
+        {label: 'front', width: '--width', height: '--height', 
+            transform: 'rotateY(0deg) translateZ(calc(var(--depth) / 2))'},
+        {label: 'back', width: '--width', height: '--height', 
+            transform: 'rotateY(180deg) translateZ(calc(var(--depth) / 2))'},
+        {label: 'left', width: '--depth', height: '--height', 
+            transform: 'rotateY(-90deg) translateZ(calc(var(--width) / 2))'},
+        {label: 'right', width: '--depth', height: '--height', 
+            transform: 'rotateY(90deg) translateZ(calc(var(--width) / 2))'},
+        {label: 'top', width: '--width', height: '--depth', 
+            transform: 'rotateX(90deg) translateZ(calc(var(--height) / 2))'},
+        {label: 'bottom', width: '--width', height: '--depth', 
+            transform: 'rotateX(-90deg) translateZ(calc(var(--height) / 2))'}
     ];
 
     const styles = `
@@ -41,12 +47,16 @@ import { createComponent, createTemplate, WebComponent } from '../../externals.j
 
     const html = `
         <div id="faces">
-            ${faces.map(e => `<div id=${e.label} part="face" class="face"><slot name=${e.label}></slot></div>`).join('\n')}
+            ${faces.map(e => `
+                <div id=${e.label} part="face" class="face">
+                    <slot name=${e.label}>
+                    </slot>
+                </div>`).join('\n')}
         </div>
     `;
 
-    class CSS3DCuboid extends WebComponent {
-        static get tagName() { return 'css3d-cuboid'; }
+    class Cuboid3D extends WebComponent {
+        static get tagName() { return 'cuboid-3d'; }
         static get attributes() {
             return {
                 'width': {type: String, default: 0},
@@ -71,5 +81,5 @@ import { createComponent, createTemplate, WebComponent } from '../../externals.j
     }
 
     const template = createTemplate(html, styles);
-    createComponent(CSS3DCuboid, template);
+    createComponent(Cuboid3D, template);
 })();
