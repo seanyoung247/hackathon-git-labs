@@ -20,6 +20,10 @@ import { createComponent, createTemplate, WebComponent } from '../../externals.j
 
     const styles = `
         :host {
+            --width: 100px;
+            --height: 100px;
+            --depth: 100px;
+
             transform-style: preserve-3d;
             width: var(--width);
             height: var(--height);
