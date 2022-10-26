@@ -1,5 +1,6 @@
 
 import { createComponent, createTemplate, WebComponent } from '../../externals.js';
+import { WebPrimitive3D } from './primitive.js'
 
 (() => {
 
@@ -59,7 +60,7 @@ import { createComponent, createTemplate, WebComponent } from '../../externals.j
         </div>
     `;
 
-    class Cuboid3D extends WebComponent {
+    class Cuboid3D extends WebPrimitive3D {
         static get tagName() { return 'cuboid-3d'; }
         static get attributes() {
             return {
@@ -67,20 +68,6 @@ import { createComponent, createTemplate, WebComponent } from '../../externals.j
                 'height': {type: String, default: '100px'},
                 'depth': {type: String, default: '100px'}
             }
-        }
-        static _createDefaultAccessor(self, attr, prop) {
-            Object.defineProperty(self, attr, {
-                get() { return self[prop]; },
-                set(val) {
-                    this.style.setProperty(`--${attr}`, val);
-                    self[prop] = self.attributes[attr].type(val);
-                    self.setAttribute(attr, val);
-                }
-            });
-        }
-        constructor() {
-            super();
-            this._createShadow({mode: 'open'});
         }
     }
 
