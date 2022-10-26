@@ -39,7 +39,7 @@ export class WebComponent extends HTMLElement {
      * @protected
      * @param {Object} self - Web Component instance (this)
      * @param {String} attr - attribute name
-     *      * @param {String} prop - property name
+     * @param {String} prop - property name
      * @returns 
      */
     static _createDefaultAccessor(self, attr, prop) {

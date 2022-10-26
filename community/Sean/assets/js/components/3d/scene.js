@@ -11,7 +11,7 @@ import { createComponent, createTemplate, WebComponent } from '../../externals.j
         }
     `;
 
-    const html = `<slot></slot>`;
+    const html = `<slot part="objects"></slot>`;
 
     class Scene3D extends WebComponent {
         static get tagName() { return 'scene-3d'; }

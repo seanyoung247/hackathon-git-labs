@@ -1,5 +1,5 @@
 
-import { createComponent, createTemplate, WebComponent } from '../../externals.js';
+import { createComponent, createTemplate } from '../../externals.js';
 import { WebPrimitive3D } from './primitive.js'
 
 (() => {
@@ -53,8 +53,8 @@ import { WebPrimitive3D } from './primitive.js'
     const html = `
         <div id="faces">
             ${faces.map(e => `
-                <div id=${e.label} part="face ${e.label}" class="face">
-                    <slot name=${e.label}>
+                <div id="${e.label}" part="face ${e.label}" class="face">
+                    <slot name="${e.label}">
                     </slot>
                 </div>`).join('\n')}
         </div>
