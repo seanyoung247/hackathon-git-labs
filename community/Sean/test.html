@@ -24,7 +24,7 @@
 
         #scene::part(objects) {
             flex-flow: column;
-            gap: 1em;
+            gap: 5em;
         }
 
         @keyframes rotate {
@@ -41,7 +41,7 @@
 
         #cube::part(face) {
             border: 1px solid black;
-            background-color: #00550088;
+            background-color: #005500;
         }
 
         #cylinder {
@@ -52,7 +52,7 @@
 
         #cylinder::part(face) {
             border: 1px solid black;
-            background-color: #00550088;
+            background-color: #005500;
         }
     </style>
 
@@ -62,7 +62,7 @@
 <body>
     <scene-3d id="scene">
         <cuboid-3d id="cube"></cuboid-3d>
-        <cylinder-3d id="cylinder"></cylinder-3d>
+        <cylinder-3d id="cylinder" sides="24"></cylinder-3d>
     </scene-3d>
 </body>
 </html>

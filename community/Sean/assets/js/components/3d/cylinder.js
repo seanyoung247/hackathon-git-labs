@@ -10,7 +10,7 @@ import { WebPrimitive3D } from './primitive.js';
             --height: 100px;
             --sides: 16;
 
-            --PI: 3.14159265358979;
+            --PI: 3.14;
 
             height: var(--height);
             width: calc(var(--radius) * 2);
@@ -65,8 +65,24 @@ import { WebPrimitive3D } from './primitive.js';
                 'sides': {type: Number, default: 16}
             }
         }
+
+        get sides() { return this._sides; }
+        set sides(val) { 
+            this.style.setProperty(`--sides`, val);
+            this._sides = this.attributes.sides.type(val);
+            this._faces.innerHTML = '';
+            this._faces.append(generateFaces(this._sides));
+            this.setAttribute('sides', val);
+        }
+
+        constructor() {
+            super();
+            this._faces = this.shadowRoot.getElementById('faces');
+        }
+
         connectedCallback() {
-            this.shadowRoot.getElementById('faces').append(generateFaces(this._sides));
+            this._faces.innerHTML = '';
+            this._faces.append(generateFaces(this._sides));
         }
     }
 
