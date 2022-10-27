@@ -26,11 +26,12 @@ import { WebPrimitive3D } from './primitive.js';
             position: absolute;
             left: 50%; top: 50%;
             height: 100%;
-            width: calc( ( 2 * var(--PI) * var(--radius) ) / var(--sides) );
+            width: 1.96em; /*calc( ( 2 * var(--PI) * var(--radius) ) / var(--sides) );*/
+
 
             --a: calc( (360deg / var(--sides)) * var(--i) );
 
-            transform: translate(-50%,-50%) rotateY(var(--a)) translateZ(var(--radius));
+            transform: translate(-50%,-50%) rotateY(var(--a)) translateZ(4.90em);
         }
     `;
     const html = `
@@ -60,8 +61,8 @@ import { WebPrimitive3D } from './primitive.js';
         static get tagName() { return 'cylinder-3d'; }
         static get attributes() {
             return {
-                'radius': {type: String, default: '50px'},
-                'height': {type: String, default: '100px'},
+                'radius': {type: String, default: 50},
+                'height': {type: String, default: 100},
                 'sides': {type: Number, default: 16}
             }
         }
@@ -81,6 +82,7 @@ import { WebPrimitive3D } from './primitive.js';
         }
 
         connectedCallback() {
+            this._genFaces();
             this._faces.innerHTML = '';
             this._faces.append(generateFaces(this._sides));
         }
