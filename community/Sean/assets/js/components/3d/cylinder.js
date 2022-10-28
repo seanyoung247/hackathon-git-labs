@@ -26,12 +26,29 @@ import { WebPrimitive3D } from './primitive.js';
             position: absolute;
             left: 50%; top: 50%;
             height: 100%;
-            width: 1.96em; /*calc( ( 2 * var(--PI) * var(--radius) ) / var(--sides) );*/
+            width: var(--l);
 
-
-            --a: calc( (360deg / var(--sides)) * var(--i) );
-
-            transform: translate(-50%,-50%) rotateY(var(--a)) translateZ(4.90em);
+            transform: 
+                translate(-50%,-50%) 
+                rotateY(calc(var(--a) * var(--i))) 
+                translateZ(var(--off));
+        }
+        .cap {
+            height: calc(var(--radius) * 2);
+            width: calc(var(--radius) * 2);
+            clip-path: circle(50% at 50% 50%);
+        }
+        #top {
+            transform: 
+                translate(-50%,-50%) 
+                rotateX(90deg) 
+                translateZ(calc(var(--height) / 2));
+        }
+        #bottom {
+            transform: 
+                translate(-50%,-50%) 
+                rotateX(-90deg) 
+                translateZ(calc(var(--height) / 2));
         }
     `;
     const html = `
@@ -72,7 +89,7 @@ import { WebPrimitive3D } from './primitive.js';
             this.style.setProperty(`--sides`, val);
             this._sides = this.attributes.sides.type(val);
             this._faces.innerHTML = '';
-            this._faces.append(generateFaces(this._sides));
+            this._genFaces(this._faces);
             this.setAttribute('sides', val);
         }
 
@@ -82,9 +99,9 @@ import { WebPrimitive3D } from './primitive.js';
         }
 
         connectedCallback() {
-            this._genFaces();
+            
             this._faces.innerHTML = '';
-            this._faces.append(generateFaces(this._sides));
+            this._genFaces(this._faces);
         }
     }
 
