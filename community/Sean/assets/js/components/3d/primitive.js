@@ -2,6 +2,16 @@
 import { WebComponent, createFragment } from '../../externals.js';
 
 export class WebPrimitive3D extends WebComponent {
+
+    static get attributes() {
+        return {
+            'width': {type: Number, default: 100},
+            'height': {type: Number, default: 100},
+            'sides': {type: Number, default: 0},
+            'unit': {type: String, default: 'px'}
+        }
+    }
+
     static _createDefaultAccessor(self, attr, prop) {
         Object.defineProperty(self, attr, {
             get() { return self[prop]; },

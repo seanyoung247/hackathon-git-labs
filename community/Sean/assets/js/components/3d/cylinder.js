@@ -56,15 +56,15 @@ import { WebPrimitive3D } from './primitive.js';
         </div>
     `;
 
-    class Cylinder3D extends WebPrimitive3D {
-        static get tagName() { return 'cylinder-3d'; }
-        static get attributes() {
-            return {
-                'radius': {type: String, default: 50},
-                'height': {type: String, default: 100},
-                'sides': {type: Number, default: 16}
-            }
+class Cylinder3D extends WebPrimitive3D {
+    static get tagName() { return 'cylinder-3d'; }
+
+    static get attributes() {
+        return {
+            ...super.attributes,
+            'sides': {type: Number, default: 16}
         }
+    }
 
         get sides() { return this._sides; }
         set sides(val) { 
