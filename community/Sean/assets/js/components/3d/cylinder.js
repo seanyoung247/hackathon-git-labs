@@ -56,24 +56,6 @@ import { WebPrimitive3D } from './primitive.js';
         </div>
     `;
 
-    const generateFaces = count => {
-        const fragment = new DocumentFragment();
-        const faceTemp = document.createElement('div');
-        const slotTemp = document.createElement('slot');
-        faceTemp.classList.add('face');
-
-        for (let i = 1; i <= count; i++) {
-            const face = faceTemp.cloneNode();
-            const slot = slotTemp.cloneNode();
-            face.setAttribute('part', `face face-${i}`);
-            face.style.setProperty('--i', i);
-            slot.setAttribute('name', `face-${i}`);
-            face.append(slot);
-            fragment.append(face);
-        }
-        return fragment;
-    }
-
     class Cylinder3D extends WebPrimitive3D {
         static get tagName() { return 'cylinder-3d'; }
         static get attributes() {
