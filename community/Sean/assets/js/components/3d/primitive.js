@@ -1,6 +1,28 @@
 
 import { WebComponent, createFragment } from '../../externals.js';
 
+
+const style = `
+    :host {
+        transform-style: preserve-3d;
+    }
+    #faces {
+        width: 100%;
+        height: 100%;
+        position: relative;
+        transform-style: preserve-3d;
+    }
+    .face {
+        position: absolute;
+        left: 50%; top: 50%;
+        height: 100%;
+    }
+`;
+
+
+const html = '<div id="faces"></div>';
+
+
 export class WebPrimitive3D extends WebComponent {
 
     static get attributes() {
