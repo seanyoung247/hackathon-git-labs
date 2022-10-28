@@ -104,6 +104,13 @@ export class WebComponent extends HTMLElement {
     }
 };
 
+/**
+ * Creates a document fragment from a HTML string
+ * @param {String} html 
+ */
+export const createFragment = (html) => {
+    return document.createRange().createContextualFragment(html);
+}
 
 /**
  * Loads a given template file and creates a DOM template object
