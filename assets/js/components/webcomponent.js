@@ -123,7 +123,7 @@ export const loadTemplate = file => {
             .then(response => response.text())
             .then(data => {
                 const templateEl = document.createElement('template');
-                templateEl.innerHTML = data;
+                templateEl.content.append(createFragment(data));
                 resolve(templateEl);
             })
             .catch(reject)
@@ -141,9 +141,9 @@ export const createTemplate = (html, styles = null) => {
     const templateEl = document.createElement('template');
     
     if (styles) {
-        html = `<style>${styles}</style>${html}`;
+        templateEl.content.append(createFragment(`<style>${styles}</style>`));
     }
-    templateEl.innerHTML = html;
+    templateEl.content.append(createFragment(html));
 
     return templateEl;
 };
