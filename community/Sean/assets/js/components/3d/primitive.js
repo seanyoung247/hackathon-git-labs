@@ -22,24 +22,25 @@ export class WebPrimitive3D extends WebComponent {
             }
         });
     }
+
     constructor() {
         super();
         this._createShadow({mode: 'open'});
+        this._faces = this.shadowRoot.getElementById('faces');
+    }
 
-        this._sides = 0;
-        this._radius = 0;
-        this._height = 0;
+    connectedCallback() {
+        this._faces.replaceChildren();
+        this._genFaces(this._faces);
     }
 
     /* NGon helpers */
     _sideLength() {
-        const r = parseInt(this._radius);
-        return (2 * r) * Math.sin(Math.PI / this._sides);
+        return this._width * Math.sin(Math.PI / this._sides);
     }
 
-    _apothem() {
-        const r = parseInt(this._radius);
-        return r * Math.cos(Math.PI / this._sides);
+    _faceOffset() {
+        return (this._width / 2) * Math.cos(Math.PI / this._sides);
     }
 
     _genFace(id, cls='', i=0) {
@@ -47,7 +48,7 @@ export class WebPrimitive3D extends WebComponent {
             `<div id="${id}" 
                 part="face ${id}" 
                 class="face ${cls}" 
-                ${i ? `style="--i:${i}"` : ''}>
+                ${i ? `style="--i: ${i}"` : ''}>
                 <slot name="${id}"></slot>
             </div>`, 
         );
@@ -56,14 +57,14 @@ export class WebPrimitive3D extends WebComponent {
     _genFaces(container) {
         const l = this._sideLength();
         const a = (Math.PI*2) / this._sides; 
-        const offset = this._apothem();
+        const offset = this._faceOffset();
 
         const fragment = new DocumentFragment();
 
         // Pass shared face properties to faces container
-        container.style.setProperty('--a', a+'rad');        // face angles
-        container.style.setProperty('--l', l+'em');        // face length
-        container.style.setProperty('--off', offset+'em'); // face offsets
+        container.style.setProperty('--a', `${a}rad`);// face angles
+        container.style.setProperty('--l', l);          // face length
+        container.style.setProperty('--off', offset);   // face offsets
 
         // Generate sides
         for (let i = 1; i <= this._sides; i++) {
@@ -72,6 +73,7 @@ export class WebPrimitive3D extends WebComponent {
         // Generate caps
         fragment.append(this._genFace('top', 'cap'));
         fragment.append(this._genFace('bottom', 'cap'));
+        container.replaceChildren();
         container.append(fragment);
     }
 }
