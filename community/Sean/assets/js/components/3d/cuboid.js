@@ -20,18 +20,12 @@ const faces = [
 
 const styles = `
     :host {
-        --width: 100px;
-        --height: 100px;
-        --depth: 100px;
-
         transform-style: preserve-3d;
-        width: var(--width);
-        height: var(--height);
     }
     #faces {
-        width: 100%;
-        height: 100%;
         position: relative;
+        width: var(--width);
+        height: var(--height);
         transform-style: preserve-3d;
     }
     .face {
@@ -59,19 +53,28 @@ const html = `
     </div>
 `;
 
-class Cuboid3D extends WebPrimitive3D {
-    static get tagName() { return 'cuboid-3d'; }
-    static get attributes() {
-        return {
-            ...super.attributes,
-            'depth': {type: Number, default: 100},
-            'sides': {type: Number, default: 4}
-        }
-    }
-    _faceOffset() {
-        return this._width;
-    }
-}
 
-const template = createTemplate(html, styles);
-createComponent(Cuboid3D, template);
+createComponent(
+    class extends WebPrimitive3D {
+        static get tagName() { return 'cuboid-3d'; }
+        static get attributes() {
+            return {
+                ...super.attributes,
+                'depth': {type: Number, default: 100},
+                'sides': {type: Number, default: 4}
+            }
+        }
+
+        get depth() { return this._depth; }
+        set depth(val) {
+            this._depth = this.attributes.depth.type(val);
+            this._faces.style.setProperty('--depth', `${this._depth}${this._unit}`);
+            this.setAttribute('depth', val);
+        }
+
+        connectedCallback() {
+            super.connectedCallback();
+            this._faces.style.setProperty('--depth', `${this._depth}${this._unit}`);
+        }
+    },
+createTemplate(html, styles));
