@@ -12,6 +12,10 @@
             margin: 0;
         }
 
+        :root {
+            --bW: 5px;
+        }
+
         body {
             display: flex;
             position: relative;
@@ -23,13 +27,16 @@
         }
 
         #scene::part(objects) {
+            display: flex;
+            justify-content: center;
+            align-items: center;
             flex-flow: column;
-            gap: 5em;
+            gap: 15em;
         }
 
         @keyframes rotate {
-            from { transform: rotate3d(0); }
-            to { transform: rotate3d(1,1,0, 360deg);}
+            from { transform: rotateX(90deg) rotateZ(0); }
+            to { transform: rotateX(90deg) rotateZ(360deg); }
         }
 
         #cube {
@@ -37,17 +44,40 @@
         }
 
         #cube::part(face) {
-            border: 1px solid black;
-            background-color: #005500;
+            background-color: goldenrod;
         }
 
         #cylinder {
-            animation: rotate 10s linear infinite;
+            animation: rotate 8s linear infinite;
         }
 
         #cylinder::part(face) {
-            border: 1px solid black;
-            background-color: #005500;
+            background-color: goldenrod;
+        }
+        ::part(face)::after {
+            content: '';
+            position: absolute;
+            top: var(--bW);
+            left: 0;
+            right: 0;
+            bottom: var(--bW);
+            background: gold;
+        }
+        ::part(top), ::part(bottom) {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: goldenrod;
+        }
+        ::part(top)::after, ::part(bottom)::after {
+            content: '';
+            left: var(--bW);
+            right: var(--bW);
+            background: gold;
+        }
+
+        #cylinder::part(top)::after, #cylinder::part(bottom)::after {
+            border-radius: 50%;
         }
     </style>
 
@@ -56,8 +86,8 @@
 </head>
 <body>
     <scene-3d id="scene">
-        <cuboid-3d id="cube" width="10" height="15" depth="10" unit="em"></cuboid-3d>
-        <cylinder-3d id="cylinder" height="15" width="10" sides="16" unit="em"></cylinder-3d>
+        <cuboid-3d id="cube" width="5" height="1.5" depth="15" unit="em"></cuboid-3d>
+        <cylinder-3d id="cylinder" height="1.5" width="10" sides="16" unit="em"></cylinder-3d>
     </scene-3d>
 </body>
 </html>

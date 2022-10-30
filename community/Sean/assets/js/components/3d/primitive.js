@@ -56,12 +56,11 @@ const style = `
         position: absolute;
         left: 50%; top: 50%;
         height: 100%;
-        width: var(--l);
+        width: calc(var(--l) + 1px);
         transform:
             translate(-50%,-50%)
             rotateY(calc(var(--a) * var(--i)))
             translateZ(var(--off));
-        backface-visibility: hidden;
     }
     .cap {
         height: var(--width);
@@ -93,11 +92,11 @@ export class RegularPolygon3D extends WebPrimitive3D {
 
     /* Face properties and generation */
     _sideLength() {
-        return this._width * Math.sin(Math.PI / this._sides);
+        return (this._width * Math.sin(Math.PI / this._sides)).toFixed(4);
     }
 
     _faceOffset() {
-        return (this._width / 2) * Math.cos(Math.PI / this._sides);
+        return (this._width / 2) * Math.cos(Math.PI / this._sides).toFixed(4);
     }
 
     _genFace(id, cls='', style=null) {
