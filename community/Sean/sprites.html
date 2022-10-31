@@ -41,18 +41,35 @@
         } */
 
         #sprite {
-            width: 128px;
+            width: 128x;
             height: 128px;
-            background-image: url('assets/img/sprite.svg#rotateFrame1');
+            transform: rotateY(-40deg) rotateX(-45deg);
+        }
+
+        .testcls {
+            transform-style: preserve-3d;
+            transform: rotateX(45deg) rotateY(40deg);
         }
     </style>
 
+    <script>
+        addEventListener('DOMContentLoaded', e => {
+            const sprite = document.querySelector('.testcls'); //document.getElementById('sprite');
+            console.log(sprite);
+            const trans = window.getComputedStyle(sprite);
+            console.log(trans.transform);
+        });
+    </script>
+
 </head>
 <body>
-    <div id="sprite">
-        <svg viewBox="0 0 32 32">
-            <use xlink:href="assets/img/sprite.svg#rotateFrame2"></use>
-          </svg>
+    <!-- <div id="sprite"></div> -->
+    
+    <div class="testcls">
+        <svg id="sprite" viewBox="0 0 32 32">
+            <use xlink:href="assets/img/sprite.svg#rotateFrame1"></use>
+        </svg>
     </div>
+
 </body>
 </html>
