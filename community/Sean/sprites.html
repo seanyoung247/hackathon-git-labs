@@ -32,16 +32,27 @@
             }
         }
 
-        #sprite {
+        /* #sprite {
             width: 32px;
             height: 32px;
             background-image: url(assets/img/kart.png);
-            transform: scale(4);
+            transform: scale(2);
             animation: rotateSprite 1s steps(22) infinite;
+        } */
+
+        #sprite {
+            width: 128px;
+            height: 128px;
+            background-image: url('assets/img/sprite.svg#rotateFrame1');
         }
     </style>
+
 </head>
 <body>
-    <div id="sprite-container"><div id="sprite"></div></div>
+    <div id="sprite">
+        <svg viewBox="0 0 32 32">
+            <use xlink:href="assets/img/sprite.svg#rotateFrame2"></use>
+          </svg>
+    </div>
 </body>
 </html>
