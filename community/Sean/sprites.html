@@ -21,6 +21,7 @@
             width: 100vw;
             height: 100vh;
             background-color: transparent;
+            perspective: 1500px;
         }
 
         @keyframes rotateSprite {
@@ -43,22 +44,56 @@
         #sprite {
             width: 128x;
             height: 128px;
-            transform: rotateY(-40deg) rotateX(-45deg);
+            transform-style: preserve-3d;
+            transform: rotateZ(-45deg) rotateY(-45deg) rotateX(-45deg);
         }
 
         .testcls {
             transform-style: preserve-3d;
-            transform: rotateX(45deg) rotateY(40deg);
+            transform: rotateX(45deg) rotateY(45deg) rotateZ(45deg);
         }
     </style>
 
     <script>
         addEventListener('DOMContentLoaded', e => {
-            const sprite = document.querySelector('.testcls'); //document.getElementById('sprite');
-            console.log(sprite);
-            const trans = window.getComputedStyle(sprite);
-            console.log(trans.transform);
+            const container = document.querySelector('.testcls'); 
+            const sprite = document.getElementById('sprite');
+            const trans = window.getComputedStyle(container).getPropertyValue('transform');
+
+            console.log(trans);
+            console.log(window.getComputedStyle(sprite).getPropertyValue('transform'));
         });
+        /*
+                X           Y           Z       T
+            0.5,        0.853553,   0.146447,   0,
+            -0.5,       0.146447,   0.853553,   0,
+            0.707107,   -0.5,       0.5,        0,
+            0,          0,          0,          1,
+
+            0.5,        -0.5,       0.707107,   0,
+            0.853553,   0.146447,   -0.5,       0,
+            0.146447,   0.853553,   0.5,        0,
+            0,          0,          0,          1
+
+            rotateX(a):
+            1,          0,          0,          0,
+            0,          cos(a),     -sin(a),    0,
+            0,          sin(a),     cos(a),     0,
+            0,          0,          0,          1,
+
+            rotateY(a):
+            cos(a),     0,          sin(a),     0,
+            0,          1,          0,          0,
+            -sin(a),    0,          cos(a),     0,
+            0,          0,          0,          1,
+
+            rotateZ(a):
+            cos(a),     -sin(a),    0,          0,
+            sin(a),     cos(a),     0,          0,
+            0,          0,          1,          0,
+            0,          0,          0,          1,
+        */
+
     </script>
 
 </head>
