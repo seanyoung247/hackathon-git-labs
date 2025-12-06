@@ -16,7 +16,9 @@ Community Stats:
 
 ## About the ... Dev, Project, Scope. 🤔
 
-Hey there! 👋 I'm Anthony (aka Auxfuse), a Frontend Developer and an avid open source hackathon enthusiast, especially those held by [Code Institute's Community](https://codeinstitute.net/ie/). I built this project as a structured approach to submitting your first, of hopefully many, Pull Requests to Open Source. To learn more about me and follow my other work, click here 👉 [Auxfuse](https://github.com/auxfuse). One small tidbit about me, I love Emojis, they are so damn colorful and can really help to spice up a wall of text. 📃
+Hey there! 👋 I'm Anthony (aka Auxfuse), a Frontend Developer and an avid open source hackathon enthusiast. I built this project as a structured approach to submitting your first, of hopefully many, Pull Requests to Open Source.
+
+To learn more about me and follow my other work, click here 👉 [Auxfuse](https://github.com/auxfuse). One small tidbit about me, I love Emojis, they are so damn colorful and can really help to spice up a wall of text. 📃
 
 It's common knowledge that the inner workings to Git are often the initial stumbling blocks to most people making their first Pull Request (PR) to a project. It can be frustrating, confusing and just a bit of an undertaking trying to get to grips with it.
 
@@ -28,9 +30,9 @@ This is a fundamental competency that most don't realise along their Coding jour
 
 🎃🌐💻
 
-This project is all about Open Source and learning how to submit your first Pull Requests. As it is now Hacktoberfest (today is 01/10/2022), we are now accepting Pull Requests that meet the `intermediate.md` specification. That is, a fully custom directory added to the Community utilising HTML, CSS & JS and of course with your details added to the `data/community.json` file!
+Hacktoberfest 2022 was a resounding success for this project and those who contributed to it. Thank you to everyone for giving up your time, energy, and skillsets to make this project what it is today.
 
-Please still use the `basic.md` guide! It would be great to get your first Pull Request in using that guide, and then to see you come back to the `intermediate.md` guide adding your own custom creations to this platform! We can then review your PR, approve it, and merge it. And if you manage to submit 4 accepting PRs in the month of Hacktoberfest to repos with the Hacktoberfest topic, you can grab yourself some neat swag! Check it out here: [Hacktoberfest](https://hacktoberfest.com/)
+This project was my first iteration of open source, and Hacktoberfest 2023 has an even bigger project with some flashy specs and functionality. Hope to see you there. 🤜
 
 🎃🌐💻
 
@@ -56,9 +58,6 @@ The [Basic](basic.md) stream for this project will enable the user to learn & de
   - Cloning the Forked project to their local development IDE/Editor
   - Creating a branch from within the IDE/Editor using the Command Line Interface
 - Adding to a JSON file following a pre-defined format
-
-  **_Any PR that only satisfies this guide will not be Hacktoberfest approved and valid. For Hacktoberfest submissions, please utilise the `intermediate.md` guide._**
-
 - Commiting work to their branch
 - Creating a PR
 - Completing the PR template
@@ -71,8 +70,6 @@ The [Intermediate](intermediate.md) stream for this project will enable the user
 
   Sometimes, it's great to showcase your work in a directory like this. You never know who you might one day be sitting beside for work 🙂😀 So use this as an opportunity to create something bespoke and unique, showcasing your skills using HTML & CSS.
 
-  **_Any PR that satisfies this guide will be Hacktoberfest approved and valid 👏👏_**
-
 - Directory surfing and creating sub-directories
 - Optional review and delve into the default files of the project where you will find Grid, Flexbox, Root variables, Fetch API, JSON etc. All of these are are done in vanilla languages, and this project is completely framework-LESS.
 
@@ -80,21 +77,10 @@ The [Intermediate](intermediate.md) stream for this project will enable the user
 
 ## Credits/Acknowledgements/Afterthoughts 💭
 
-My formal accomplishments as a student are because of [Code Institute](https://codeinstitute.net/ie/)'s Curriculum, but more impactfully, to it's Community. Not only have I made some of the greatest friends, but I've gotten to work alongside so many of them in the Community Hackathons. If you think being a developer is something you are interested in, I would definitely endorse CI for their current curriculum and the community at large. Learning can be lonely, but it doesn't have to be. 🤜
-
 Special Shoutout to these people 🙌:
 
 - [Tim Nelson](https://github.com/TravelTimN) - My friend and a constant reflection of how the community is now thanks to his efforts as not only a Student, but as a Lead, Tutor, Assessor, Content Creator and now a Mentor.
-- [Stefan Dworschak](https://github.com/stefdworschak) - My introduction to Open Source could of been very painless. But Stefan, ushered me through with incredible patience and a wealth of knowledge to boot. I owe my entire start to Open Source to him.
-- [Jim Morel](https://github.com/JimLynx) - It's not a jeep! 😅 An inside joke between us both. Student, turned friend, and now the face of Code Institute's Community. The man behind Slackbot responses, and the lead program. Jim shows incredible attention to detail to the community, and it's a good thing too, as the community is quite possibly CI's biggest and greatest asset. 🤜
-- The Hackathon Team Leads:
-
-  - [Naoise Gaffney](https://github.com/NaoiseGaffney)
-  - [Aideen Malone](https://github.com/AideenM12)
-  - [Gwen Bradbury](https://github.com/Gwen-Bradbury)
-  - [Andrew Dempsey](https://github.com/andrewdempsey2018)
-  - [Alissa Troiano](https://github.com/alissatroiano)
-
-  Community leaders, people who have shown passion and ample knowledge to others in need. This team is a cornerstone to the Community Hackathons. From providing support, to initiative and collaboration of their own to help the community flourish.
+- [Jim Morel](https://github.com/JimLynx) - It's not a jeep! 😅 An inside joke between us both. Student, turned friend, and still quite possibly CI's biggest and greatest asset. 🤜
+- The Project Maintainers, [Andrew Dempsey](https://github.com/andrewdempsey2018) & [John Doyle](https://github.com/aramantos). The boys! 👏 This project would not be possible without them.
 
 282GB 🕸🕸🕸🕸

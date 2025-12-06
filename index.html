@@ -20,12 +20,10 @@
     <section id="content">
         <div id="content-column">
             <h1 class="primary-heading margin-yb-sm">Hackathon Github Labs</h1>
-            <h2 class="sub-heading">Community Collab Project with Code Institute</h2>
+            <h2 class="sub-heading">Community Collaboration Project</h2>
             <p class="margin-yt-sm">
-                A small project to help submit your first PR,
-                understand and utilise git, and even
-                have specified tasks that emulate a
-                Ticket in a live environment.
+                A small project to help submit your first PR, understand and utilise git, and even
+                have specified tasks that emulate a Ticket in a live environment.
                 <br>
                 Help us by sharing the project to 👉
                 <a href="https://ctt.ac/qZN6i" target="_blank" rel="noopener noreferrer" class="twitter-link">Twitter!</a>
@@ -44,7 +42,7 @@
             <div id="showcases-slide-title"></div>
             <!-- Custom slideshow element -->
             <slide-show 
-                id="showcases-slideshow" 
+                id="showcases-slideshow"
                 timeout="15" 
                 animation="scroll"
                 slide="0">
@@ -77,31 +75,33 @@
         </div>
         <!-- Community card template -->
         <template class="item-template">
-        <div class="card">
-            <h2 class="card-title">
-                <span data-field="random_emoji"></span>
-                <span data-field="name">_</span>
-            </h2>
-            <h3 class="card-sub margin-yt-sm">
-                📅 Started: <span data-field="course_start"></span>
-            </h3>
-            <h3 class="card-sub margin-yb-sm custom-underline">
-                🎓 Stage: <span data-field="course_stage"></span>
-            </h3>
-            <h3 class="card-detail">
-                Loves: <span data-field="favorite_language"></span> 😍 
-            </h3>
-            <h3 class="card-detail custom-underline">
-                Learning: <span data-field="currently_learning"></span> 📚 
-            </h3>
-            <a class="participant-link" href="" data-content="View Work ➡" data-field="link">
-                View Work ➡
-            </a>
-        </div>
-    </template>
+            <div class="card">
+                <h2 class="card-title">
+                    <span data-field="random_emoji"></span>
+                    <span data-field="name">_</span>
+                </h2>
+                <h3 class="card-sub margin-yt-sm">
+                    📅 Started: <span data-field="course_start"></span>
+                </h3>
+                <h3 class="card-sub margin-yb-sm custom-underline">
+                    🎓 Stage: <span data-field="course_stage"></span>
+                </h3>
+                <h3 class="card-detail">
+                    Loves: <span data-field="favorite_language"></span> 😍 
+                </h3>
+                <h3 class="card-detail custom-underline">
+                    Learning: <span data-field="currently_learning"></span> 📚 
+                </h3>
+                <a class="participant-link" href="" data-content="View Work ➡" data-field="link">
+                    View Work ➡
+                </a>
+            </div>
+        </template>
+
+        <ul id="pagination"></ul>
     </section>
 
-    <footer>
+    <footer id="footer">
         <div id="repo-go">
             <p>
                 Want to contribute to this project?
@@ -112,40 +112,30 @@
             <a href="https://github.com/auxfuse/hackathon-git-labs/blob/main/README.md">Start here 🙌</a>
         </div>
 
-        <div id="additional-info">
-            <h3>Meet the team:</h3>
-            <ul id="team-list">
-                <li>
-                    <a href="https://github.com/auxfuse" target="_blank" rel="noopener noreferrer">
-                        Anthony - Owner/Developer
-                    </a>
-                </li>
-                <li>
-                    <a href="https://github.com/NaoiseGaffney" target="_blank" rel="noopener noreferrer">
-                        Gaff - Maintainer/Developer
-                    </a>
-                </li>
-                <li>
-                    <a href="https://github.com/AideenM12" target="_blank" rel="noopener noreferrer">
-                        Aideen - Maintainer/Developer
-                    </a>
-                </li>
-                <li>
-                    <a href="https://github.com/Gwen-Bradbury" target="_blank" rel="noopener noreferrer">
-                        Gwen - Maintainer/Developer
-                    </a>
-                </li>
-                <li>
-                    <a href="https://github.com/andrewdempsey2018" target="_blank" rel="noopener noreferrer">
-                        Andrew - Maintainer/Developer
-                    </a>
-                </li>
-                <li>
-                    <a href="https://github.com/alissatroiano" target="_blank" rel="noopener noreferrer">
-                        Alissa - Maintainer/Developer
-                    </a>
-                </li>
-            </ul>
+        <div id="footer-info">
+            <p>Meet the AWESOME team 🤜</p>
+            <a class="participant-link" href="https://github.com/auxfuse" target="_blank" rel="noopener noreferrer"
+                data-content="Anthony" data-field="link">
+                Anthony
+            </a>
+            <a class="participant-link" href="https://github.com/andrewdempsey2018" target="_blank"
+                rel="noopener noreferrer" data-content="Andrew" data-field="link">
+                Andrew
+            </a>
+            <a class="participant-link" href="https://github.com/aramantos" target="_blank"
+                rel="noopener noreferrer" data-content="John" data-field="link">
+                John
+            </a>
+            <p>More info 🛈</p>
+            <a class="participant-link" href="/privacy.html" data-content="Privacy" data-field="link">
+                Privacy
+            </a>
+            <a class="participant-link" href="/accessibility.html" data-content="Accessibility" data-field="link">
+                Accessibility
+            </a>
+            <a class="participant-link" href="/contact.html" data-content="Contact" data-field="link">
+                Contact
+            </a>
         </div>
     </footer>
 </body>

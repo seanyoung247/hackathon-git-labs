@@ -12,6 +12,7 @@ export const genIndexes = (max, min = 0) => new Array(max - min).fill(0).map((_,
 /** Returns a random emoji from the emoji array passed */
 export const getRandomEmoji = emojis => emojis[Math.floor(Math.random() * emojis.length)];
 
+export const clamp = (num, min, max) => Math.min(Math.max(num, min), max);
 
 /**
  * In place shuffles array into a random order
@@ -36,8 +37,7 @@ export const shuffle = (arr) => {
  * @param {Number} max - Maximum range value
  * @returns {Number} between min and max
  */
-export const wrapInRange = (min, val, max) => {
-    max++;
-    return (((val - min) % (max - min)) + (max - min)) % (max - min) + min;
-}
+export const wrapInRange = (min, val, max) => 
+    (((val - min) % (++max - min)) + 
+        (max - min)) % (max - min) + min;
 

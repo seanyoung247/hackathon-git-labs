@@ -4,8 +4,6 @@ This guide is intended for those who want to create a PR with some unique conten
 
 Then dive in below! This can be your first, or maybe your second...or even your third PR. Don't be afraid to submit a few different JSON objects, and then sub-directories to boot. 🤜
 
-***Any PR satisfying this guide with a custom directory of HTML, CSS, JS will be applicable for Hacktoberfest 2022!*** 🎃🌐💻
-
 If at any stage you want to submit a PR to revise the content you already submitted, then feel free. This project is made for you, the Participant, but over time most of the work in this project will be associated to all of you out there you contribute. 🤗
 
 ## 👇 Participant steps: 👇
@@ -41,6 +39,25 @@ If at any stage you want to submit a PR to revise the content you already submit
 * Inside this newly created directory, please create an `index.html` file and a `style.css` file and link them together appropriately using the `link` HTML element inside the head of the index.html file. [More information on the "link" element.](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/link)
 
 ![Participant Directory Community Sub-Folder](docs/images/dirFiles.png)
+
+* Before you create your custom creation, add one more Key/Value pair to your JSON object, (made by following the [basic.md](https://github.com/auxfuse/hackathon-git-labs/blob/main/basic.md) guide), in the [assets/data/community.json](https://github.com/auxfuse/hackathon-git-labs/blob/main/assets/data/community.json) file to add your new directory to the Showcase.
+
+    Add the following key/value pair, and make sure to add the comma after the `currently_learning` key/value pair:
+    ```json
+    "showcase": true
+    ```
+
+    Your entire JSON object should now look like this:
+    ```json
+    {
+        "name": "auxfuse",
+        "course_start": "2019",
+        "course_stage": "Alumni",
+        "favorite_language": "CSS",
+        "currently_learning": "PHP/ThreeJS",
+        "showcase": true
+    }
+    ```
 
 * Then you can create your custom html/css piece.
 
